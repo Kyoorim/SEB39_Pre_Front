@@ -12,9 +12,9 @@ export const useBoardQuery = () => {
   const refetch = async () => {
     const res = await getPosts(pageNum, limit);
     setPage({ data: res.data, pageInfo: res.pageInfo });
-    setTotal(res.pageInfo.totalElements);
+    setTotal(res.pageInfo?.totalElements);
     // eslint-disable-next-line
-    console.log(res.pageInfo);
+    console.log(res);
   };
 
   useEffect(() => {
