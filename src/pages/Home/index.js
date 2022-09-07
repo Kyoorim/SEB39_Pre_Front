@@ -38,7 +38,7 @@ export default function Home() {
               <button>Filter</button>
             </S.BtnCol>
           </S.FilterRow>
-          {page.data.map((item) => (
+          {page.data?.map((item) => (
             <QuestionBox key={item.postId} board={item} />
           ))}
           <Pagination
