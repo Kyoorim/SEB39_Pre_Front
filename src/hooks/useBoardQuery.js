@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 
 export const useBoardQuery = () => {
-  const [page, setPage] = useState({ data: [], pageInfo: null });
+  const [page, setPage] = useState({ data: [], pageInfo: [] });
   const [pageNum, setPageNum] = useState(1);
   const [total, setTotal] = useState(0);
   const { pathname } = useLocation();
@@ -13,6 +13,8 @@ export const useBoardQuery = () => {
     const res = await getPosts(pageNum, limit);
     setPage({ data: res.data, pageInfo: res.pageInfo });
     setTotal(res.pageInfo.totalElements);
+    // eslint-disable-next-line
+    console.log(res);
   };
 
   useEffect(() => {
