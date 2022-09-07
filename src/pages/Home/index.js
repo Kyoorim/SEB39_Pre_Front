@@ -13,7 +13,7 @@ import { useBoardQuery } from 'hooks/useBoardQuery';
 
 export default function Home() {
   const navigate = useNavigate();
-  const { page, pageNum, setPageNum, limit, total } = useBoardQuery();
+  const { page, pageNum, setPageNum, limit } = useBoardQuery();
 
   return (
     <>
@@ -26,7 +26,7 @@ export default function Home() {
             <Button onClick={() => navigate('/ask')}>Ask Question</Button>
           </S.QuestionRow>
           <S.FilterRow>
-            <span>{total} questions</span>
+            <span> questions</span>
             <S.BtnCol>
               <button>Newest</button>
               <button>Active</button>
